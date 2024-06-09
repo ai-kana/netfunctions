@@ -10,21 +10,22 @@ int test() {
 }
 
 int main() {
-    printf("1: Read and execute function\n2: Send function\n> ");
+    printf("1: Wait for function\n2: Send function\n> ");
 
     int input;
     scanf("%d", &input);
 
     struct fbuffer buffer;
     if (input == 1) {
+        buffer = read_buffer();
+        run_function(buffer);
+    }
+
+    if (input == 2) {
         buffer = get_function(&test);
         send_buffer(buffer.instructions, buffer.length);
     } 
 
-    if (input == 2) {
-        buffer = read_buffer();
-        run_function(buffer);
-    }
 
     free(buffer.instructions);
     return 0;
