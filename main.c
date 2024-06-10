@@ -6,7 +6,11 @@
 #include "functions/frunner.h"
 
 int test() {
-    return 69;
+    int x = 5;
+    x++;
+    x++;
+    x <<= 1;
+    return x;
 }
 
 int main() {

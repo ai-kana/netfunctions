@@ -1,14 +1,12 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <errno.h>
 #include <unistd.h>
 
 #include "net.h"
-#include "../functions/frunner.h"
 
 void send_buffer(unsigned char* buffer, unsigned int size) {
     struct sockaddr_in client;
